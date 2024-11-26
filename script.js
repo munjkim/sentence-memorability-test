@@ -165,13 +165,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Event Listener: Keystroke Tracking and Enter Key Submission
+  
   typedSentence.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       e.preventDefault(); // Prevent newline
       submitInput(); // Trigger Submit
     } else {
-      keystrokes.push({ key: e.keyCode, timestamp: Date.now() });
+      keystrokes.push({ key: e.code, timestamp: Date.now() });
     }
   });
+  
 
 });
