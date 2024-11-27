@@ -136,10 +136,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Prepare CSV Data
     const csvData = [
-      ["Event", "Timestamp"],
+      ["Event", "value"],
       ["Start", startTime],
       ["Continue", continueTime],
-      ...keystrokes.map((ks) => [`Key: ${ks.key}`, ks.timestamp]),
+      ...keystrokes.map((ks) => [ks.key, ks.timestamp]),
       ["Reference Sentence", referenceSentence],
       ["User Input", userInput],
       ["Memory", memoryDuration],
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const resultLabel = isCorrect ? "correct" : "wrong";
-    const fileName = `Sub${setNumberInput.value}_${currentKey}.csv`;
+    const fileName = `Memory_Sub${setNumberInput.value}_${currentKey}.csv`;
     saveCSV(csvData, fileName);
 
     // Reset State for Next Sentence
